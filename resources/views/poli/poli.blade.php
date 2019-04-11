@@ -5,7 +5,7 @@
     <!-- Content Header (Page header) -->
     <!-- Content Header (Page header) -->
     <section class="content-header">
-<h1>Daftar Pasien</h1>
+<h1>Daftar Poli</h1>
 <br>
      <div class="box box-danger">
             <div class="box-header with-border">
@@ -22,7 +22,7 @@
                 </div>
                 <!-- /btn-group -->
                 
-                <input type="text" class="form-control" name="cari" placeholder="Search Id Pasien">
+                <input type="text" class="form-control" name="cari" placeholder="Search Id Poli">
               </div>
                 </div>
               </div>
@@ -34,7 +34,7 @@
 
           <div class="box box-danger">
             <div class="box-header">
-              <h3 class="box-title">Daftar Pasien</h3>
+              <h3 class="box-title">Daftar Poli </h3>
             </div>
             
             <div class="box-body">
@@ -48,68 +48,44 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Masukkan Data Pasien</h4>
+                <h4 class="modal-title">Masukkan Data Poli</h4>
               </div>
-              <form class="form-horizontal" action="/inputdatapasien/store" method="post">
+              <form class="form-horizontal" action="/inputdatapoli/store" method="post">
               {{csrf_field()}}
               <div class="box-body">
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Id Pasien</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label">Id Poli</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Id Pasien" name="id_pasien">
+                    <input type="text" class="form-control" id="inputEmail3" placeholder="Id Poli" name="id_poli">
                   </div>
                 </div>
                
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Nama Pasien</label>
+                  <label for="inputPassword3" class="col-sm-2 control-label">Nama Poli</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Nama Pasien" name="nama_pasien">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="Nama Poli" name="nama_poli">
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Jenis Kelamin</label>
+                  <label for="inputPassword3" class="col-sm-2 control-label">Keterangan</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Jenis Kelamin" name="jenis_kelamin">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="Keterangan" name="keterangan">
                   </div>
                 </div>
 
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">No Telepon</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="No Telepon" name="no_telepon">
-                  </div>
-                </div>
-                  
-                  <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">TTL</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="TTL" name="ttl">
-                  </div>
+                
                 </div>
 
-                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Alamat</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Alamat" name="alamat">
-                  </div>
-                </div>
+                 
+              
 
 
                 
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">No KTP</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="No KTP" name="no_ktp">
-                  </div>
-                </div>
+                
 
                   
                 
@@ -135,30 +111,24 @@
         </form>
             <table class="table table-bordered table-striped">
                 <tr>
-                <th>Id Pasien</th>
-                <th>Nama Pasien</th>
-                <th>Jenis Kelamin</th>
-                <th>TTL</th>
-                <th>Alamat</th>
-                <th>No Telepon</th>
-                <th>No KTP</th>
+                <th>Id Poli</th>
+                <th>Nama Poli</th>
+                <th>Keterangan</th>
                 <th>Aksi</th>
                 </tr>
 
-                @foreach($pasien as $pasien)
+                @foreach($poli as $poli)
                 <tr>
-                <td>{{$pasien->id_pasien}}</td>
-                <td>{{$pasien->nama_pasien}}</td>
-                <td>{{$pasien->jenis_kelamin}}</td>
-                <td>{{$pasien->ttl}}</td>
-                <td>{{$pasien->alamat}}</td>
-                <td>{{$pasien->no_telepon}}</td>
-                <td>{{$pasien->no_ktp}}</td>
+                <td>{{$poli->id_poli}}</td>
+                <td>{{$poli->nama_poli}}</td>
+                <td>{{$poli->keterangan}}</td>
+                
+                
 
 
                <td>
-                      <a href="/pasienedit/edit/{{ $pasien->id_pasien }}">Edit</a> 
-                        <a href="/delete/pasien/{{ $pasien->id_pasien}}">Hapus</a>
+                      <a href="/poliedit/edit/{{ $poli->id_poli }}">Edit</a> 
+                        <a href="/delete/poli/{{ $poli->id_poli}}">Hapus</a>
                     </td>
                 </tr>
 

@@ -17,22 +17,22 @@
         
         <li>
           <a href="pasien">
-            <i class="fa fa-table"></i> <span>Daftar Pasien</span> 
+            <i class="fa fa-table"></i> <span>Pasien</span> 
           </a>
         </li>
         <li>
           <a href="dokter">
-            <i class="fa fa-table"></i> <span>Daftar Dokter</span> 
+            <i class="fa fa-table"></i> <span>Dokter</span> 
           </a>
         </li>
         <li>
-          <a href="poliklinik">
-            <i class="fa fa-table"></i> <span>Poliklinik</span> 
+          <a href="poli">
+            <i class="fa fa-table"></i> <span>Poli</span> 
           </a>
         </li>
         <li>
-          <a href="pendaftaran">
-            <i class="fa fa-table"></i> <span>Pendaftaran</span> 
+          <a href="daftar">
+            <i class="fa fa-table"></i> <span>Daftar</span> 
           </a>
         </li>
         

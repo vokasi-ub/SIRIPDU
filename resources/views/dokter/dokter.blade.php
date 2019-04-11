@@ -5,7 +5,7 @@
     <!-- Content Header (Page header) -->
     <!-- Content Header (Page header) -->
     <section class="content-header">
-<h1>Daftar Pasien</h1>
+<h1>Daftar Dokter</h1>
 <br>
      <div class="box box-danger">
             <div class="box-header with-border">
@@ -22,7 +22,7 @@
                 </div>
                 <!-- /btn-group -->
                 
-                <input type="text" class="form-control" name="cari" placeholder="Search Id Pasien">
+                <input type="text" class="form-control" name="cari" placeholder="Search Id Dokter">
               </div>
                 </div>
               </div>
@@ -34,7 +34,7 @@
 
           <div class="box box-danger">
             <div class="box-header">
-              <h3 class="box-title">Daftar Pasien</h3>
+              <h3 class="box-title">Daftar Dokter</h3>
             </div>
             
             <div class="box-body">
@@ -48,68 +48,57 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Masukkan Data Pasien</h4>
+                <h4 class="modal-title">Masukkan Data Dokter</h4>
               </div>
-              <form class="form-horizontal" action="/inputdatapasien/store" method="post">
+              <form class="form-horizontal" action="/inputdatadokter/store" method="post">
               {{csrf_field()}}
               <div class="box-body">
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Id Pasien</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label">Id Dokter</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Id Pasien" name="id_pasien">
+                    <input type="text" class="form-control" id="inputEmail3" placeholder="Id Dokter" name="id_dokter">
                   </div>
                 </div>
                
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Nama Pasien</label>
+                  <label for="inputPassword3" class="col-sm-2 control-label">Nama Dokter</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Nama Pasien" name="nama_pasien">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="Nama Dokter" name="nama_dokter">
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Jenis Kelamin</label>
+                  <label for="inputPassword3" class="col-sm-2 control-label">No Hp</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Jenis Kelamin" name="jenis_kelamin">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="No Hp" name="no_hp">
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">No Telepon</label>
+                  <label for="inputPassword3" class="col-sm-2 control-label">Spesialis</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="No Telepon" name="no_telepon">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="Spesialis" name="spesialis">
                   </div>
                 </div>
                   
                   <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">TTL</label>
+                  <label for="inputPassword3" class="col-sm-2 control-label">Id Poli</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="TTL" name="ttl">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="Id Poli" name="id_poli">
                   </div>
                 </div>
 
-                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Alamat</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Alamat" name="alamat">
-                  </div>
-                </div>
+                 
+              
 
 
                 
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">No KTP</label>
-
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="No KTP" name="no_ktp">
-                  </div>
-                </div>
+                
 
                   
                 
@@ -135,30 +124,27 @@
         </form>
             <table class="table table-bordered table-striped">
                 <tr>
-                <th>Id Pasien</th>
-                <th>Nama Pasien</th>
-                <th>Jenis Kelamin</th>
-                <th>TTL</th>
-                <th>Alamat</th>
-                <th>No Telepon</th>
-                <th>No KTP</th>
+                <th>Id Dokter</th>
+                <th>Nama Dokter</th>
+                <th>No Hp</th>
+                <th>Spesialis</th>
+                <th>Id Poli</th>
                 <th>Aksi</th>
                 </tr>
 
-                @foreach($pasien as $pasien)
+                @foreach($dokter as $dokter)
                 <tr>
-                <td>{{$pasien->id_pasien}}</td>
-                <td>{{$pasien->nama_pasien}}</td>
-                <td>{{$pasien->jenis_kelamin}}</td>
-                <td>{{$pasien->ttl}}</td>
-                <td>{{$pasien->alamat}}</td>
-                <td>{{$pasien->no_telepon}}</td>
-                <td>{{$pasien->no_ktp}}</td>
+                <td>{{$dokter->id_dokter}}</td>
+                <td>{{$dokter->nama_dokter}}</td>
+                <td>{{$dokter->no_hp}}</td>
+                <td>{{$dokter->spesialis}}</td>
+                <td>{{$dokter->id_poli}}</td>
+                
 
 
                <td>
-                      <a href="/pasienedit/edit/{{ $pasien->id_pasien }}">Edit</a> 
-                        <a href="/delete/pasien/{{ $pasien->id_pasien}}">Hapus</a>
+                      <a href="/dokteredit/edit/{{ $dokter->id_dokter }}">Edit</a> 
+                        <a href="/delete/dokter/{{ $dokter->id_dokter}}">Hapus</a>
                     </td>
                 </tr>
 
