@@ -38,13 +38,21 @@ class DokterController extends Controller
      */
     public function store(Request $request)
     {
-        DB::table('dokter')->insert([
+        //DB::table('dokter')->insert([
 
-            'nama_dokter' => $request->nama_dokter,
-            'no_hp' => $request->np_hp,
-            'spesialis' => $request->spesialis,
-            'no_hp' =>$request->no_hp,
-            'id_poli' =>$request->id_poli
+            //'nama_dokter' => $request->nama_dokter,
+            //'no_hp' => $request->np_hp,
+            //'spesialis' => $request->spesialis,
+            //'no_hp' =>$request->no_hp,
+            //'id_poli' =>$request->id_poli
+
+        $dokter = dokter::create([
+            'nama_dokter' => request->input('nama_dokter'),
+            'no_hp' => request->input('no_hp'),
+            'spesialis' => request->input('spesialis'),
+            'no_hp' => request->input('no_hp'),
+            'id_poli' => request->input('id_poli')
+
 
         ]);
 
@@ -80,13 +88,19 @@ class DokterController extends Controller
      */
     public function update(Request $request)
     {
-        DB::table('dokter')->where('id_dokter',$request->id)->update([
+        //DB::table('dokter')->where('id_dokter',$request->id)->update([
             
             
-            'nama_dokter' => $request->nama_dokter,
+            //'nama_dokter' => $request->nama_dokter,
+            //'no_hp' => $request->no_hp,
+            //'spesialis' => $request->spesialis,
+            //'id_poli' =>$request->id_poli
+        
+        dokter::where('id',$request->id)->update([
+            'nama_dokter'=> $request->nama_dokter,
             'no_hp' => $request->no_hp,
             'spesialis' => $request->spesialis,
-            'id_poli' =>$request->id_poli
+            'id_poli' => $request->id_poli            
 
            
         ]);

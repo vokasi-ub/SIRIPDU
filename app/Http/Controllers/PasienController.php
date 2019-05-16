@@ -38,14 +38,24 @@ class PasienController extends Controller
      */
     public function store(Request $request)
     {
-        DB::table('pasien')->insert([
+        //DB::table('pasien')->insert([
 
-            'nama_pasien' => $request->nama_pasien,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'ttl' => $request->ttl,
-            'alamat' =>$request->alamat,
-            'no_telepon' =>$request->no_telepon,
-            'no_ktp' =>$request->no_ktp
+            //'nama_pasien' => $request->nama_pasien,
+            //'jenis_kelamin' => $request->jenis_kelamin,
+            //'ttl' => $request->ttl,
+            //'alamat' =>$request->alamat,
+            //'no_telepon' =>$request->no_telepon,
+            //'no_ktp' =>$request->no_ktp
+
+            $pasien = pasien::create([
+                'nama_pasien' => $request->input('nama_pasien'),
+                'jenis_kelamin' => $request->input('jenis_kelamin'),
+                'ttl' => $request->input('ttl'),
+                'alamat' => $request->input('alamat'),
+                'no_telepon' => $request->input('no_telepon'),
+                'no_ktp' => $request->input('no_ktp')
+
+            
 
         ]);
 
@@ -81,15 +91,28 @@ class PasienController extends Controller
      */
     public function update(Request $request)
     {
-        DB::table('pasien')->where('id_pasien',$request->id)->update([
+        //DB::table('pasien')->where('id_pasien',$request->id)->update([
             
             
-            'nama_pasien' => $request->nama_pasien,
+            //'nama_pasien' => $request->nama_pasien,
+           //'jenis_kelamin' => $request->jenis_kelamin,
+            //'ttl' => $request->ttl,
+            //'alamat' =>$request->alamat,
+            //'no_telepon' =>$request->no_telepon,
+            //'no_ktp' =>$request->no_ktp
+
+        pasien::where('id',$request->id)->update([
+            'nama_pasien'=> $request->nama_pasien,
             'jenis_kelamin' => $request->jenis_kelamin,
             'ttl' => $request->ttl,
-            'alamat' =>$request->alamat,
-            'no_telepon' =>$request->no_telepon,
-            'no_ktp' =>$request->no_ktp
+            'alamat' => $request->alamat,
+            'no_telepon' => $request->no_telepon,
+            'no_ktp' => $request->no_ktp
+
+
+        
+
+
              
            
         ]);
