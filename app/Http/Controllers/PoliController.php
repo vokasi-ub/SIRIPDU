@@ -38,14 +38,12 @@ class PoliController extends Controller
      */
     public function store(Request $request)
     {
-        //DB::table('poli')->insert([
+        DB::table('poli')->insert([
 
-            //'nama_poli' => $request->nama_poli,
-            //'keterangan' => $request->keterangan
+            'nama_poli' => $request->nama_poli,
+            'keterangan' => $request->keterangan
             
-            $poli = poli::create([
-            'nama_poli' => request->input('nama_poli'),
-            'keterangan' => request->input('keterangan')
+           
             
         ]);
 
@@ -81,18 +79,12 @@ class PoliController extends Controller
      */
     public function update(Request $request)
     {
-        //DB::table('poli')->where('id_poli',$request->id)->update([
+        DB::table('poli')->where('id_poli',$request->id)->update([
             
             
-            //'nama_poli' => $request->nama_poli,
-            //'keterangan' => $request->keterangan
-
-         poli::where('id',$request->id)->update([
-            'nama_poli'=> $request->nama_poli,
+            'nama_poli' => $request->nama_poli,
             'keterangan' => $request->keterangan
-                    
-            
-           
+        
         ]);
             return redirect('/poli');
     }

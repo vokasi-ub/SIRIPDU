@@ -67,3 +67,6 @@ Route::post('inputdatadaftar/store','DaftarController@store')->name('inputdatada
 Route::get('delete/daftar/{id}', 'DaftarController@destroy');
 Route::resource('daftar', 'DaftarController');
 Route::get('daftaredit/edit/{id}', 'DaftarController@edit')->name('daftaredit.edit');
+
+
+Route::get('/poliModel', 'PoliController@update');

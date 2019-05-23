@@ -38,22 +38,17 @@ class DaftarController extends Controller
      */
     public function store(Request $request)
     {
-        //DB::table('daftar')->insert([
+        DB::table('daftar')->insert([
 
-            //'id_daftar' => $request->id_daftar,
-            //'id_pasien' => $request->id_pasien,
-            //'id_dokter' => $request->id_dokter,
-            //'id_poli'   => $request->id_poli,
-            //'status' => $request->status,
-            //'jenis_bayar'=> $request->jenis_bayar
+            'id_daftar' => $request->id_daftar,
+            'id_pasien' => $request->id_pasien,
+            'id_dokter' => $request->id_dokter,
+            'id_poli'   => $request->id_poli,
+            'status' => $request->status,
+            'jenis_bayar'=> $request->jenis_bayar
 
-         $daftar = daftar::create([
-            'id_daftar' => request->input('id_daftar'),
-            'id_pasien' => request->input('id_pasien'),
-            'id_dokter' => request->input('id_dokter'),
-            'id_poli' => request->input('id_poli'),
-            'status' => request->input('status'),
-            'jenis_bayar' => request->input('jenis_bayar')
+         
+            
 
 
         ]);
@@ -90,21 +85,15 @@ class DaftarController extends Controller
      */
     public function update(Request $request)
     {
-        //DB::table('daftar')->where('id_daftar',$request->id)->update([
-            //'id_daftar' => $request->id_daftar,
-            //'id_pasien' => $request->id_pasien,
-            //'id_dokter' => $request->id_dokter,
-            //'id_poli'   => $request->id_poli,
-            //'status'    => $request->status,
-            //'jenis_bayar'=> $request->jenis_bayar
-
-         daftar::where('id-daftar',$request->id_daftar)->update([
-            'id_daftar'=> $request->id_daftar,
+        DB::table('daftar')->where('id_daftar',$request->id)->update([
+            'id_daftar' => $request->id_daftar,
             'id_pasien' => $request->id_pasien,
             'id_dokter' => $request->id_dokter,
-            'id_poli' => $request->id_poli,
-            'status' => %$request->status,
-            'jenis_bayar' =>$request->jenis_bayar         
+            'id_poli'   => $request->id_poli,
+            'status'    => $request->status,
+            'jenis_bayar'=> $request->jenis_bayar
+
+                
 
 
            
